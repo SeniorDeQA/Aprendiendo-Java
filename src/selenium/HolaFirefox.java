@@ -2,6 +2,8 @@ package selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+//Firefox va por gecko, hay que importarlo. 
+
 
 public class HolaFirefox {
 	
@@ -10,7 +12,6 @@ public class HolaFirefox {
 		
 		//Se inicializa pasando por Gecko
 		System.setProperty("webdriver.gecko.driver", "C://Users//dortiz//workspace//selenium_3.4.0//geckodriver.exe");
-		
 		
 		driver =new FirefoxDriver();
 		//debe ser url formal
