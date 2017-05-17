@@ -7,11 +7,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HolaFirefox {
 	
+	static final String RUTA_SELENIUM = "C://Users//dortiz//workspace//selenium_3.4.0";
+	
 	public static void main(String[] args) {
 		WebDriver driver;
 		
 		//Se inicializa pasando por Gecko
-		System.setProperty("webdriver.gecko.driver", "C://Users//dortiz//workspace//selenium_3.4.0//geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", RUTA_SELENIUM+"//geckodriver.exe");
 		
 		driver =new FirefoxDriver();
 		//debe ser url formal

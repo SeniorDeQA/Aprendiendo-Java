@@ -9,7 +9,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DesiredCapabilitiesDemo {
 	
+	static final String RUTA_SELENIUM = "C://Users//dortiz//workspace//selenium_3.4.0";
+
+	
 	public static void main(String[] args) throws Exception {
+		
 		
 		WebDriver driver;
 		
@@ -21,7 +25,7 @@ public class DesiredCapabilitiesDemo {
 		
 		
 		//Se inicializa pasando por Gecko
-		System.setProperty("webdriver.gecko.driver", "C://Users//dortiz//workspace//selenium_3.4.0//geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", RUTA_SELENIUM+"//geckodriver.exe");
 		driver = new FirefoxDriver(caps);//lo seteo pasando capabilities
 		
 		//controlo la marioneta
