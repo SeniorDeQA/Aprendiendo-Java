@@ -1,15 +1,26 @@
 package sueltos;
 
-import java.sql.SQLException;
+import java.sql.*;
 
 public class consultasql {
 
 	public static void main(String[] args) {
 		
-		ConexionAbd acc = new ConexionAbd();
+		ConexionAbd2 con = new ConexionAbd2();
 			
 		try {
-			acc.withdraw(100);
+			
+			String sql = "SELECT * FROM usuarios;"; 
+			PreparedStatement pst = con.getConnection().prepareStatement(sql);
+			
+			
+			ResultSet rs = pst.executeQuery(sql);
+
+			while(rs.next() ){
+				System.out.println (rs.getString ("nombre") + " " + rs.getString ("ape1") + " " + rs.getString("ape2"));
+			}
+			
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Parece que soy un poco zote");
