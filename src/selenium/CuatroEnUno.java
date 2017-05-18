@@ -12,7 +12,7 @@ public class CuatroEnUno {
 	static final String RUTA_SELENIUM = "C://Users//dortiz//workspace//selenium_3.4.0";
 	static WebDriver driver; 
 	
-	public static void Prueba(){
+	public static void Prueba(String QueNavegador){
 		//Ejecutamos la prueba
 		/**
 		 * Firefox peta con el quit
@@ -20,7 +20,7 @@ public class CuatroEnUno {
 		 */
 		driver.close();
 		//TODO hacer algo
-		System.out.println("Estatobien");
+		System.out.println("Estatobien en "+QueNavegador);
 	}
 	
 	
@@ -28,32 +28,37 @@ public class CuatroEnUno {
 	public static void Lanzador(int Case){
 		//Lanzamos los navegadores, y pasamos a la prueba
 		String baseURL = "http://www.google.com";	
+		String QueNavegador;
 		
 		switch (Case) {
 	     case (1)://Edge
 	    	System.setProperty("webdriver.edge.driver", RUTA_SELENIUM+"//edgedriver.exe");
 		 	driver = new EdgeDriver();
 		 	driver.get(baseURL);
-		 	Prueba();
+		 	QueNavegador = "Edge";
+		 	Prueba(QueNavegador);
 	 		break; 
 	     case (2)://IE
 	 		System.setProperty("webdriver.ie.driver", RUTA_SELENIUM+"//iedriver.exe");
 			driver =new InternetExplorerDriver();
 		    driver.get(baseURL);
-		    Prueba();
+		    QueNavegador = "IE";
+		 	Prueba(QueNavegador);
 			break;
 	     case (3)://Chrome
 	 		System.setProperty("webdriver.chrome.driver", RUTA_SELENIUM+"//chromedriver.exe");
 			driver = new ChromeDriver() ;		
 		    driver.get(baseURL);
-		    Prueba();
-			break; 
+		    QueNavegador = "Chrome";
+		 	Prueba(QueNavegador);
+		 	break; 
 	     case (4)://Firefox
 	 		System.setProperty("webdriver.gecko.driver", RUTA_SELENIUM+"//geckodriver.exe");
 			driver =new FirefoxDriver();
 			driver.get(baseURL);
-			Prueba();
-	    	break; 		    		
+			QueNavegador = "Firefox";
+		 	Prueba(QueNavegador);
+		 	break; 		    		
 		}	
 				 
 	}//FIN LANZADOR
