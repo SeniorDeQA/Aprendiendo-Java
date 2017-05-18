@@ -33,6 +33,8 @@ public class CapabilitiesIE {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();//No lo coje
 		driver.get(baseURL);
+		
+		driver.close();
 		driver.quit();
 	}
 
