@@ -13,21 +13,21 @@ public class CuatroEnUno {
 	static final String RUTA_SELENIUM = "C://Users//dortiz//workspace//selenium_3.4.0";
 	static WebDriver driver; 
 	
-	public static void Pruebas(String QueNavegador){
+	private static void Pruebas(String QueNavegador){
 		//Baterías de pruebas, abstraida de navegador
 		
-		PonUnTuit.ponerTuit();
+		PonUnTuit.tuitear();
 		
 		
 		
 		
-		driver.quit();
+		//driver.quit();
 		System.out.println("FIN PRUEBAS en "+QueNavegador);
 	}
 	
 	
 	
-	public static void Lanzador(int Case){
+	private static void Lanzador(int Case){
 		//Lanzamos los navegadores, y pasamos a la prueba
 		String baseURL = "https://twitter.com/";	
 		String QueNavegador;
@@ -72,7 +72,7 @@ public class CuatroEnUno {
 		
 		//Solo iteramos para trabajar con 4 navegadores
 		//Pasamos a Lanzador
-		for (int i=1; i<=4; i++){
+		for (int i=1; i<=1; i++){
 			
 			switch (i) {
 		     case (1)://Edge
