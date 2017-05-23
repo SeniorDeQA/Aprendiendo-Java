@@ -50,13 +50,14 @@ public class DAO {
 		
 		try {
 			
-			String sql = query; //"SELECT * FROM usuarios;"
+			String sql = query; 
 			PreparedStatement pst = DAO.getConnection().prepareStatement(sql);
 			
 			ResultSet rs = pst.executeQuery(sql);
 
 			while(rs.next() ){
-				System.out.println (rs.getString ("nombre") + " " + rs.getString ("ape1") + " " + rs.getString("ape2"));
+				//TODO Aquí estamos pintando un truño, cuando lo que se pinte, dependerá que la query que nos pasen
+				//System.out.println (rs.getString ("nombre") + " " + rs.getString ("ape1") + " " + rs.getString("ape2"));
 			}
 			
 			
@@ -64,12 +65,28 @@ public class DAO {
 			System.out.println(e.getMessage());
 			System.out.println("Parece que soy un poco zote");
 		} finally {
-			System.out.println("-- Fin consulta a BBDD local --");
+			System.out.println("-- Fin consulta a BBDD --");
 		}
 
 	}
 		
-	
+	static void insert(String query){
+		try {
+			
+			String sql = query; 
+			PreparedStatement pst = DAO.getConnection().prepareStatement(sql);
+			
+			pst.executeUpdate(sql);
+
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			System.out.println("Parece que soy un poco zote");
+		} finally {
+			System.out.println("-- Fin escritura a BBDD --");
+		}
+		
+	}
 	
 	
 }
