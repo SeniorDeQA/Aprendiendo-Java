@@ -56,14 +56,12 @@ public class DAO {
 			ResultSet rs = pst.executeQuery(sql);
 
 			while(rs.next() ){
-				//TODO Aquí estamos pintando un truño, cuando lo que se pinte, dependerá que la query que nos pasen
-				//System.out.println (rs.getString ("nombre") + " " + rs.getString ("ape1") + " " + rs.getString("ape2"));
+				System.out.println (rs.getString ("Id") + " " + rs.getString ("Fecha") + " " + rs.getString("Resultado"));
 			}
 			
 			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-			System.out.println("Parece que soy un poco zote");
 		} finally {
 			System.out.println("-- Fin consulta a BBDD --");
 		}
@@ -81,9 +79,6 @@ public class DAO {
 			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-			System.out.println("Parece que soy un poco zote");
-		} finally {
-			System.out.println("-- Fin escritura a BBDD --");
 		}
 		
 	}

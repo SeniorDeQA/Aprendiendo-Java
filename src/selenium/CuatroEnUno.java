@@ -1,5 +1,7 @@
 package selenium;
 
+import java.sql.SQLException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -16,10 +18,16 @@ public class CuatroEnUno {
 	static DesiredCapabilities caps;
 	
 	
-	private static void Pruebas(String QueNavegador){
+	private static void Pruebas(String QueNavegador) throws Exception, SQLException {
 		//Baterías de pruebas, abstraida de navegador
 		
-		PonUnTuit.tuitear();
+		try {
+			PonUnTuit.tuitear();
+		} catch (SQLException e) {
+			System.out.println("-- Excepción al presistir resultado del test --");
+		} catch (Exception e) {
+			System.out.println("-- Excepción. Fijo que ha sido por no poder localizar un elemento --");
+		}
 		
 		
 		
@@ -30,7 +38,7 @@ public class CuatroEnUno {
 	
 	
 	
-	private static void Lanzador(int Case){
+	private static void Lanzador(int Case) throws Exception{
 		//Lanzamos los navegadores, y pasamos a la prueba
 		
 		String baseURL = "https://twitter.com/";	
@@ -101,7 +109,7 @@ public class CuatroEnUno {
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		//Solo iteramos para trabajar con 4 navegadores
 		//Pasamos a Lanzador
