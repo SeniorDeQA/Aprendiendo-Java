@@ -9,6 +9,8 @@ public class Consultasql_DAO {
 		DAO.defineConnection("jdbc:mysql://localhost:3306/","root","");
 		
 		DAO.query("SELECT * FROM pruebas.usuarios;");
+		//Deprecado, hemos cambiado el método apra trabajar con resultados de test
+		//Ya no lee usuarios de la tabla pruebas. 
 		
 		DAO.closeConnection();
 		
