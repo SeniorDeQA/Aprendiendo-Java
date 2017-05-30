@@ -67,14 +67,17 @@ public class DAO {
 		}
 
 	}
-		
-	static void insert(String query){
+	
+	static void insertaTrazaTest(String queTest, String QueNavegador, String debug, int resulTest){
 		try {
 			
-			String sql = query; 
-			PreparedStatement pst = DAO.getConnection().prepareStatement(sql);
 			
-			pst.executeUpdate(sql);
+			PreparedStatement pst = DAO.getConnection().prepareStatement("INSERT INTO pruebas.resultados_selenium (Tipo,Navegador,Resultado,Traza) VALUES (?,?,?,?);");
+			pst.setString(1, queTest);
+			pst.setString(2, QueNavegador);
+			pst.setInt(3, resulTest);
+			pst.setString(4, debug);
+			pst.executeUpdate();
 
 			
 		} catch (SQLException e) {

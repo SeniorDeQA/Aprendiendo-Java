@@ -22,7 +22,7 @@ public class CuatroEnUno {
 		//Baterías de pruebas, abstraida de navegador
 		
 		try {
-			PonUnTuit.tuitear();
+			PonUnTuit.tuitear(QueNavegador);
 		} catch (SQLException e) {
 			System.out.println("-- Excepción al presistir resultado del test --");
 		} catch (Exception e) {
