@@ -78,6 +78,7 @@ public class PonUnTuit {
 							resulTest = 0;
 						}
 			DAO.insertaTrazaTest(queTest,QueNavegador,debug,resulTest);
+			
 			DAO.closeConnection();
 		}
 			

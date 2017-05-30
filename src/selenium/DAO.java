@@ -45,18 +45,18 @@ public class DAO {
 	
 	
 	//Le pasamos un string sql a la clase, y la ejecuta
-	static void query(String query){
+	static void resultadosPorNavegador(String QueNavegador){
 		
 		
 		try {
 			
-			String sql = query; 
-			PreparedStatement pst = DAO.getConnection().prepareStatement(sql);
+			PreparedStatement pst = DAO.getConnection().prepareStatement("SELECT * FROM pruebas.resultados_selenium WHERE (Navegador = ?);");
+			pst.setString(1, QueNavegador);
 			
-			ResultSet rs = pst.executeQuery(sql);
+			ResultSet rs = pst.executeQuery();
 
 			while(rs.next() ){
-				System.out.println (rs.getString ("Id") + " " + rs.getString ("Fecha") + " " + rs.getString("Resultado"));
+				System.out.println (rs.getString ("Id") + " / " + rs.getString ("Fecha") + " / " + rs.getString("Tipo") + " / " + rs.getString("Resultado"));
 			}
 			
 			
